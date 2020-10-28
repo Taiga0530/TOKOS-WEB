@@ -1,0 +1,659 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'M_2c';
+  src: url("M__2c_regular/mplus-2c-regular.woff") format("woff");
+}
+
+body{
+  margin: 0 auto;
+  font-weight: normal;
+  width: 100%;
+  font-size: 16px;
+  font-family: 'M_2c','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','メイリオ','ＭＳ Ｐゴシック','MS PGothic';
+  line-height: 32px;
+  text-align: center;
+  color: #4d4d4d;
+  display: grid;
+  grid-template:
+      "...  ......  ..."
+      "...  header  ..." 65px
+      "...  ......  ..."
+      "...   top    ..." 600px
+      "...  ......  ..."
+      "... greeting ..."
+      "...  ......  ..."
+      "... service  ..."
+      "...  ......  ..."
+      "... develop  ..."
+      "...  ......  ..."
+      "...  design  ..."
+      "...  ......  ..."
+      "... company  ..."
+      "...  ......  ..."
+      "... contact  ..."
+      "...  ......  ..."
+      "...  footer  ..."
+      "...  ......  ..."
+      / auto 1fr auto;
+}
+
+/* h1,h2,h3,h4,h5,hr,p,ul,ol,li,dl,dt,dd,form,figure,form,select,input,textarea {
+  margin: 0px;
+  padding: 0px;
+  font-size: 100%;
+  font-weight: normal;
+} */
+
+.inner {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.header{
+  grid-area: header;
+  background-color: #333;
+  animation: SlideIn0 2s;
+}
+
+@keyframes SlideIn0 {
+  0% {
+    opacity: 0;/*初期状態では透明に*/
+    transform: translateX(-64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header .inner{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* height: 100%; */
+}
+
+.header-logo {
+  margin-top: 10px;
+}
+
+.header-logo a img {
+  margin-top: auto;
+  width: 50%;
+  height: 100%;
+}
+
+.header-list ul {
+  display: flex;
+  align-items: center;
+}
+
+.header-list li{
+  margin-left: 20px;
+  margin-right: 20px;
+  list-style: none;
+  /* margin-top: 10px; */
+}
+
+.header-list li a{
+  text-decoration: none;
+  color: #fff;
+  line-height: 16px;
+}
+
+.link { 
+  margin-left: 1rem;
+  text-align: center;
+}
+
+
+.hover-Uline {
+  position:relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hover-Uline:before {
+  content: ""; /*疑似要素の中身は空（記述は必須）*/
+  position: absolute; /*子要素として疑似要素を固定*/
+  left: 0; /*長さはテキストの両端まで*/
+  right: 0; /*長さはテキストの両端まで*/
+  bottom: 2px;  
+  width: 100%; 
+  height: 2px; 
+  background-color: #9e9c9c; 
+  transform: scale(0, 1); 
+  transform-origin: center; 
+  transition: transform .2s; 
+}
+
+.hover-Uline:hover:before {
+  transform: scale(1); /*ホバー時に等倍へ拡大*/
+}
+
+#top {
+  grid-area: top;
+  background: url("img/web/top_web@2x.png") center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  animation: fadeIn2 3s;
+}
+
+@keyframes fadeIn2 {
+  from{
+    opacity: 0;
+  }
+
+  to{
+    opacity: 1;
+  }
+}
+
+#greeting {
+  grid-area: greeting;
+  position: relative;
+  padding: 40px 0;
+}
+
+#greeting h1 {
+  transition: 2s;
+  opacity: 0;
+  margin-right: 100px;
+}
+
+#greeting h1.animated {
+  opacity: 1;
+  margin-right: 0px;
+}
+
+#greeting p {
+  margin-top: 30px;
+  transition: 1s;
+  opacity: 0;
+}
+
+#greeting p.animated {
+  opacity: 1;
+}
+
+#service {
+  grid-area: service;
+  background-color: #f2f2f2;
+  padding: 40px 0;
+}
+
+#service h1{
+  margin-top: 30px;
+  transition: 2s;
+  opacity: 0;
+  margin-right: 100px;
+}
+
+#service h1.animated {
+  opacity: 1;
+  margin-right: 0px;
+}
+
+#service .inner {
+  margin-top: 40px;
+}
+
+#service .inner .block1 {
+  display: flex;
+  justify-content: center;
+}
+
+#service .inner .block2 {
+  display: flex;
+  justify-content: center;
+}
+
+#service .box1{
+  margin-right: 20px;
+  margin-bottom: 20px;
+  transition: 1s;
+  opacity: 0;
+  margin-top: 100px;
+}
+
+#service .box1.animated {
+  opacity: 1;
+  margin-top: 0px;
+}
+
+#service .box2{
+  margin-left: 20px;
+  transition: 1s;
+  opacity: 0;
+  margin-top: 100px;
+}
+
+#service .box2.animated {
+  opacity: 1;
+  margin-top: 0px;
+}
+
+#service .box3{
+  margin-right: 20px;
+  margin-bottom: 20px;
+  transition: 1s;
+  opacity: 0;
+  margin-top: 100px;
+}
+
+#service .box3.animated {
+  opacity: 1;
+  margin-top: 0px;
+}
+
+#service .box4{
+  margin-left: 20px;
+  transition: 1s;
+  opacity: 0;
+  margin-top: 100px;
+}
+
+#service .box4.animated {
+  opacity: 1;
+  margin-top: 0px;
+}
+
+#service .inner img{
+  width: 350px;
+  height: 220px;
+}
+
+.develop{
+  grid-area: develop;
+  padding: 40px 0;
+}
+
+.develop{
+  transition: 2s;
+  opacity: 0;
+}
+
+.develop.animated {
+  opacity: 1;
+}
+
+.develop h1{
+  transition: 2s;
+  opacity: 0;
+  margin-right: 100px;
+}
+
+.develop h1.animated {
+  opacity: 1;
+  margin-right: 0px;
+}
+
+
+.develop .box{
+  transition: 2s;
+  opacity: 0;
+  margin-right: 200px;
+}
+
+.develop .box.animated {
+  opacity: 1;
+  margin-right: 0px;
+}
+
+.develop .box p{
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: white;
+  width: 564px;
+  height: 28px;
+  background: #00649b;
+}
+
+.triangle{
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #b4b4b4;
+}
+
+.design{
+  grid-area: design;
+  background-color:#f2f2f2;
+  padding: 40px 0;
+}
+
+.design .inner{
+  max-width: 1300px;
+}
+
+.design p{
+  transition: 2s;
+  opacity: 0;
+}
+
+.design p.animated {
+  opacity: 1;
+}
+
+.design.animated {
+  opacity: 1;
+}
+
+.design h1{
+  transition: 2s;
+  opacity: 0;
+  margin-right: 100px;
+}
+
+.design h1.animated {
+  opacity: 1;
+  margin-right: 0px;
+}
+
+.design .box{
+  transition: 2s;
+  opacity: 0;
+  margin-right: 200px;
+}
+
+.design .box.animated {
+  opacity: 1;
+  margin-right: 0px;
+}
+
+.design .box p{
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: white;
+  width: 564px;
+  height: 28px;
+  background: #00649b;
+}
+
+#company{
+  grid-area: company;
+  margin: 0 auto;
+  transition: 2s;
+  opacity: 0;
+  padding: 40px 0;
+}
+
+#company.animated {
+  opacity: 1;
+}
+
+#company h1{
+  transition: 2s;
+  opacity: 0;
+  margin-right: 100px;
+}
+
+#company h1.animated {
+  opacity: 1;
+  margin-right: 0px;
+}
+
+#company .box{
+  display: flex;
+  text-align: left;
+}
+
+#company .box1{
+  margin: 0 auto;
+}
+
+#company .box2{
+  margin: 0 auto;
+}
+
+#contact{
+  grid-area: contact;
+  background-color: #f2f2f2;
+  transition: 2s;
+  opacity: 0;
+  padding: 40px 0;
+}
+
+#contact a{
+  color: red;
+}
+
+#contact label[for="name2"] a {
+  color:#f2f2f2;
+}
+
+#contact dl{
+  display: flex;
+  justify-content: center;
+}
+
+#contact.animated {
+  opacity: 1;
+}
+
+#contact h1{
+  transition: 2s;
+  opacity: 0;
+  margin-right: 100px;
+}
+
+#contact h1.animated {
+  opacity: 1;
+  margin-right: 0px;
+}
+
+#contact .submit-btn{
+  height: 40px;
+  width: 200px;
+  background-color: #00649b;
+  color: #fff;
+  border:#00649b ;
+}
+
+.submit-btn:hover {
+  opacity: 0.6;
+}
+
+#footer{
+  grid-area: footer;
+  background-color: #00649b; 
+  color: #fff;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////メディアクエリ////////////////////////////////////////// */
+
+  /*　画面サイズが800pxからはここを読み込む　*/
+@media screen and (max-width:800px) and  (min-width:400px) { 
+
+
+body{
+  margin: 0 auto;
+  font-weight: normal;
+  width: 100%;
+  font-size: 12px;
+  font-family: 'M_2c','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','イリオ','ＭＳ Ｐゴシック','MS PGothic';
+  line-height: 24px;
+  text-align: center;
+  color: #4d4d4d;
+  display: grid;
+  grid-template:
+    "...  ......  ..."
+    "...  header  ..." 70px
+    "...  ......  ..."
+    "...   top    ..." 600px
+    "...  ......  ..."
+    "... greeting ..." 250PX
+    "...  ......  ..."
+    "... service  ..." 850px
+    "...  ......  ..."
+    "... develop  ..." 466px
+    "...  ......  ..."
+    "...  design  ..." 466px
+    "...  ......  ..."
+    "... company  ..." 850px
+    "...  ......  ..."
+    "... contact  ..." 577px
+    "...  ......  ..."
+    "...  footer  ..." 154px
+    "...  ......  ..."
+    / auto 1fr auto;
+}
+
+#service .inner .block1 {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#service .inner .block2 {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#service{
+  background-color:#f2f2f2;
+}
+
+#service .inner img {
+  width: 571px;
+  height: 158.61px;
+}
+#service .box1 {
+  margin: 0 auto;
+}
+
+#service .box2 {
+  margin: 0 auto;
+}
+
+#service .box3 {
+  margin: 0 auto;
+}
+
+#service .box4 {
+  margin: 0 auto;
+}
+
+#top {
+  grid-area: top;
+  background: url("img/tablet/top_tab@2x.png") center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  animation: fadeIn2 3s;
+}
+
+h1{
+  font-size: 18px;
+  line-height: 24px;
+}
+
+p{
+  font-size: 12px;
+  line-height: 20px;
+}
+}
+
+/*　画面サイズが400pxからはここを読み込む　*/
+@media screen and (max-width:400px) { 
+
+body{
+  margin: 0 auto;
+  font-weight: normal;
+  width: 100%;
+  font-size: 8px;
+  font-family: 'M_2c','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','イリオ','ＭＳ Ｐゴシック','MS PGothic';
+  line-height: 12px;
+  text-align: center;
+  color: #4d4d4d;
+  display: grid;
+  grid-template:
+    "...  ......  ..."
+    "...  header  ..." 46px
+    "...  ......  ..."
+    "...   top    ..." 217px
+    "...  ......  ..."
+    "... greeting ..." 229PX
+    "...  ......  ..."
+    "... service  ..." 872px
+    "...  ......  ..."
+    "... develop  ..." 414px
+    "...  ......  ..."
+    "...  design  ..." 414px
+    "...  ......  ..."
+    "... company  ..." 637px
+    "...  ......  ..."
+    "... contact  ..." 470px
+    "...  ......  ..."
+    "...  footer  ..." 74px
+    "...  ......  ..."
+    / auto 1fr auto;
+}
+
+#service .inner .block1 {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#service .inner .block2 {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#service{
+  background-color:#f2f2f2;
+}
+
+#service .inner img {
+  width: 571px;
+  height: 158.61px;
+}
+
+#service .box1 {
+  margin: 0 auto;
+}
+
+#service .box2 {
+  margin: 0 auto;
+}
+
+#service .box3 {
+  margin: 0 auto;
+}
+
+#service .box4 {
+  margin: 0 auto;
+}
+
+#top {
+  grid-area: top;
+  background: url("img/mobile/top_mob@2x.png") center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  animation: fadeIn2 3s;
+}
+
+h1{
+  font-size: 12px;
+  line-height: 20px;
+}
+
+p{
+  font-size: 8px;
+  line-height: 12px;
+}
+
+#greeting {
+  margin-top: 0;
+}
+
+}
+
